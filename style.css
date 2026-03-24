@@ -62,8 +62,8 @@ background-color: #603333;
 #button {
   font-family: 'Roboto-Mono-Regular', 'garamond';
   font-size: 18px; 
-  color: #FEFCF7;
-  background-color: #603333;
+  color: #2D68C4;
+  background-color: white;
   padding: 10px;
   display: inline-block;
   margin: 10px;
@@ -75,9 +75,9 @@ background-color: #603333;
 }
 
 #button:hover {
-  background-color: #FEFCF7;
-  color: #603333;
-  border: 1px #603333 solid;
+  background-color: #2D68C4;
+  color: white;
+  border: 1px white solid;
 }
 
 a {

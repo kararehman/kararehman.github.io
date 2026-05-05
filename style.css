@@ -48,37 +48,11 @@ body {
   font-family: 'Roboto-Mono-Regular', 'garamond';
   font-size: 18px; 
   background-color: black;
+  color: white;
   display: flex; 
   flex-direction: row; 
   padding: 0px 20px;
   align-items: center;     /* Vertical */
-}
-
-
-#button {
-  font-family: 'Roboto-Mono-Regular', 'garamond';
-  font-size: 16px; 
-  background-color: black;
-  color: white;
-  padding: 10px;
-  display: inline-block;
-  margin: 10px;
-  width: fit-content;
-  position: fixed; 
-  bottom: 10px; 
-  left: 10px; 
-  cursor: pointer;
-}
-
-#button:hover {
-  background-color: blue;
-  color: white;
-}
-
-a {
-   text-decoration: none; 
-    color: black;
-    padding: 10px;
 }
 
 .projectcard {
@@ -202,15 +176,6 @@ a {
   margin: 0px 0px 20px 0px;
 }
 
-  #button {
-  font-family: 'Roboto-Mono-Regular', 'garamond';
-  font-size: 18px; 
-  color: white;
-  padding: 10px;
-  display: inline-block;
-  max-width: 100%;
-}
-
   .projectcard {
   width: 100%;
   margin-top: 20px;
@@ -245,11 +210,6 @@ a {
 .nav {
   display: flex; 
   flex-direction: column; 
-}
-
-  a {
-   text-decoration: none; 
-    color: black;
 }
 
   .aboutdescription {

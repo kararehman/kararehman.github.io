@@ -58,7 +58,7 @@ padding: 0px 20px;
   align-items: center;     /* Vertical */
 }
 
-a:active {
+a {
 text-decoration: none;
 }
 

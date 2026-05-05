@@ -47,6 +47,7 @@ body {
 .navbutton {
   font-family: 'Roboto-Mono-Regular', 'garamond';
   font-size: 18px; 
+  color: black; 
   display: flex; 
   flex-direction: row; 
   padding: 0px 20px;

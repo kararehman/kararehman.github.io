@@ -126,7 +126,7 @@ text-decoration: none;
 }
 
 .expandedpreview {
-  display: hidden;  
+  display: none;  
   transition: all 0.3s ease;
 }
 

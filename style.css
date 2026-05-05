@@ -242,11 +242,10 @@ padding: 0px 20px;
   flex-direction: column; 
 }
 
-  .expandedpreview {
-  display: flex;  
-  flex-direction: column; 
-  transition: all 0.3s ease;
-}
+ .projectcard.open .expandedpreview {
+    display: flex;
+    flex-direction: column;
+  }
 
   .aboutdescription {
   display: flex;

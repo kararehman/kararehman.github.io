@@ -130,8 +130,8 @@ text-decoration: none;
 }
 
 .expandedpreview {
-  display: none;
-  overflow: hidden;
+  display: flex;  
+  flex-direction: row; 
   transition: all 0.3s ease;
 }
 

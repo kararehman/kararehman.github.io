@@ -145,8 +145,8 @@ text-decoration: none;
 
 .collapsedpreview {
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
-  align-items: center;
   cursor: pointer;
 }
 

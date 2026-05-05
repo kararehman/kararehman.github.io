@@ -66,7 +66,6 @@ text-decoration: none;
   width: 100%;
   overflow-x: hidden;
   flex: 1;
-  display: none;
 }
 
 .projectcard.active {

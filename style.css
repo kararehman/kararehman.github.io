@@ -216,7 +216,6 @@ text-decoration: none;
     height: auto; /* let content define height */
     gap: 16px;
     padding: 0 16px; /* optional: inset so first/last image isn't flush to edge */
-    scroll-padding: 16px; /* keeps snap aligned with the padding */
     box-sizing: border-box;
   }
 

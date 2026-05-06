@@ -107,7 +107,9 @@ text-decoration: none;
 
 .projectimg {
   max-height: 100%;
-  padding: 20px 20px 20px 0px; }
+  padding: 20px 20px 20px 0px; 
+  border-radius: 10px;
+}
 
 .imgcaption {
   font-family: 'Roboto-Mono-Light', 'garamond';
@@ -226,6 +228,7 @@ text-decoration: none;
   .projectimg {
   max-width: 100%;
   padding: 20px 20px 20px 0px;
+  border-radius: 10px;
 }
 
   .links {

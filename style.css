@@ -264,6 +264,17 @@ padding: 0px 20px;
     flex-direction: column;
   }
 
+  .collapsedpreview {
+    position: relative;
+    padding-right: 30px; /* make room for the arrow */
+  }
+
+  .collapsedpreview .projectname:last-child {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+
   .aboutdescription {
   display: flex;
   justify-content: center; /* Horizontal */

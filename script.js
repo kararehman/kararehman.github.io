@@ -11,8 +11,20 @@ document.querySelectorAll('.projectcard.open').forEach(card => {
       }
     });
 
+const sheets = ['style.css', 'altstyles1.css', 'altstyles2.css'];
+let currentIndex = 0;
+
 function toggleTheme() {
-  const sheet = document.getElementById('theme-stylesheet');
-  const isDefault = sheet.getAttribute('href') === 'style.css';
-  sheet.setAttribute('href', isDefault ? 'altstyles1.css' : 'style.css');
+  currentIndex = (currentIndex + 1) % sheets.length;
+  const newSheet = sheets[currentIndex];
+  document.getElementById('theme-stylesheet').setAttribute('href', newSheet);
+  localStorage.setItem('themeIndex', currentIndex);
 }
+
+window.addEventListener('DOMContentLoaded', () => {
+  const saved = localStorage.getItem('themeIndex');
+  if (saved !== null) {
+    currentIndex = parseInt(saved);
+    document.getElementById('theme-stylesheet').setAttribute('href', sheets[currentIndex]);
+  }
+});

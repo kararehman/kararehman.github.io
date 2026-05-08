@@ -64,6 +64,7 @@ text-decoration: none;
   letter-spacing: -2%;
   line-height: 100%;
   margin-bottom: 20px; 
+  text-transform: none; 
 }
 
 .projectdescription {

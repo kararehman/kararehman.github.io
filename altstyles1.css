@@ -199,12 +199,10 @@ text-decoration: none;
 }
 
 #theme-toggle {
-  font-family: 'FavoritBook', 'helvetica';
+  font-family: 'EditorialOld', 'garamond';
   font-size: 16px; 
   padding: 10px; 
-  color: #FFF6E8;
-  background-color: #0635F0;
-  border: none; 
+  color: #0635F0;
   position: absolute; 
   bottom: 20px; 
   cursor: pointer; 

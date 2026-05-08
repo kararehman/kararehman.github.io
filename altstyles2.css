@@ -15,7 +15,7 @@ html {
 }
 
 hr {
-  color: #E5460C;
+  border: #E5460C .5px solid;
 }
 
 h1 {

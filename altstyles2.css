@@ -17,7 +17,7 @@ html {
 h1 {
   font-family: 'Stefan';
   font-size: 28px; 
-  color: #1B1915;
+  color: #701111;
   display: block;
   margin: 20px;
   max-width: 60%;
@@ -34,7 +34,7 @@ background-color: black;
 body {
   margin: 0;
   letter-spacing: -0.25px;
-  background-color: #34A853;
+  background-color: #F9EBBC;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -55,7 +55,7 @@ padding: 0px 20px;
 .navbutton {
   font-family: 'FavoritBook' 'helvetica';
   font-size: 16px; 
-  color: #1B1915;
+  color: #701111;
   display: flex; 
   flex-direction: row; 
   padding: 0px 20px;
@@ -64,7 +64,7 @@ padding: 0px 20px;
 
 a, a:active {
 text-decoration: none;
-  color: #1B1915;
+  color: #701111;
 }
 
 .river {
@@ -87,7 +87,7 @@ text-decoration: none;
 .projectname {
   font-family: 'Stefan';
   font-size: 24px; 
-  color: #1B1915;
+  color: #701111;
   display: block;
   margin-bottom: 20px;
   letter-spacing: -2%;
@@ -97,7 +97,7 @@ text-decoration: none;
 .projectdescription {
   font-family: 'FavoritBook', 'helvetica';
   font-size: 15px; 
-  color: #1B1915;
+  color: #701111;
   display: block;
   width: 60%;
   margin: 0px 0px 20px 0px;
@@ -127,14 +127,6 @@ text-decoration: none;
   width: auto;
   max-height: 100%;
   object-fit: contain;
-}
-
-.imgcaption {
-  font-family: 'FavoritBook', 'helvetica';
-  font-size: 14px; 
-  text-transform: uppercase;
-  padding: 10px 0px;
-  color: #1B1915;
 }
 
 .projectimg img {
@@ -173,7 +165,7 @@ text-decoration: none;
 .aboutdescription {
   font-family: 'FavoritBook', 'helvetica';  
   font-size: 18px; 
-  color: #1B1915;
+  color: #701111;
   display: flex;
   justify-content: center; /* Horizontal */
   align-items: center;     /* Vertical */

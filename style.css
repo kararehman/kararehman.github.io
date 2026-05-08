@@ -211,11 +211,14 @@ text-decoration: none;
   right: 20px; 
   cursor: pointer; 
   text-transform: none; 
+  background-color: black;
+  color: white;
 }
 
 #theme-toggle:hover {
   background-color: black;
   color: white;
+  text-transform: italic; 
 }
 
 

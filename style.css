@@ -18,7 +18,7 @@ html, body {
 
 h1 {
   font-family: 'Roboto-Mono-Regular', 'garamond';
-  font-size: 18px; 
+  font-size: 15px; 
   color: black;
   display: block;
   margin: 20px;
@@ -84,7 +84,7 @@ text-decoration: none;
 
 .projectname {
   font-family: 'Roboto-Mono-Regular', 'garamond';
-  font-size: 15px; 
+  font-size: 24px; 
   color: black;
   display: block;
   margin-bottom: 20px;

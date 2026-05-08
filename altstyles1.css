@@ -16,7 +16,7 @@ html {
 
 h1 {
   font-family: 'AsfaltBold';
-  font-size: 18px; 
+  font-size: 28px; 
   color: #CFE7ED;
   display: block;
   margin: 20px;
@@ -32,7 +32,7 @@ background-color: black;
 body {
   margin: 0;
   letter-spacing: -0.25px;
-  background-color: #852F2F;
+  background-color: #701111;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -51,7 +51,7 @@ padding: 0px 20px;
 }
 
 .navbutton {
-  font-family: 'AsfaltBold';
+  font-family: 'FavoritBook' 'helvetica';
   font-size: 16px; 
   color: #CFE7ED;
   display: flex; 
@@ -84,7 +84,7 @@ text-decoration: none;
 
 .projectname {
   font-family: 'AsfaltBold';
-  font-size: 15px; 
+  font-size: 24px; 
   color: #CFE7ED;
   display: block;
   margin-bottom: 20px;
@@ -214,6 +214,11 @@ text-decoration: none;
   max-width: 100%;
   line-height: 115%;
   margin: 0px 0px 20px 0px;
+  font-size: 20px;
+}
+
+  .projectname {
+  font-size: 20px; 
 }
 
 .imgcarousel {

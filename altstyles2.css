@@ -82,7 +82,7 @@ background-color: black;
 
 .aboutdescription {
   font-family: 'RadioRegular', 'helvetica';  
-  font-size: 18px; 
+  font-size: 20px; 
   color: #E5460C;
   display: flex;
   justify-content: center; /* Horizontal */

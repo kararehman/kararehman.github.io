@@ -1,0 +1,342 @@
+@font-face {
+  font-family: 'GramercyLight';
+  src: url('docs/ABCGramercy-Light-Trial.otf');
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'RadioBlack';
+  src: url('docs/PPRadioGrotesk-Black.otf');
+  font-style: normal;
+}
+
+/* document things */
+html {
+  height: 100%;
+}
+
+hr {
+  border: #E5460C .5px solid;
+}
+
+body {
+  margin: 0;
+  letter-spacing: -0.25px;
+  background-color: #FFE74A;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* text styles */
+h1 {
+  font-family: 'GramercyLight', 'garamond';
+  font-size: 15px; 
+  color: #5C111B;
+  display: block;
+  margin: 20px;
+  max-width: 60%;
+  align-items: center;
+  letter-spacing: -2%;
+  line-height: 100%;
+}
+
+.navbutton {
+  font-family: 'GramercyLight', 'garamond';
+  font-size: 15px; 
+  color: #5C111B;
+  display: flex; 
+  flex-direction: row; 
+  padding: 0px 20px;
+  align-items: center;     /* Vertical */
+}
+
+a, a:active {
+text-decoration: none;
+  color: #5C111B;
+}
+
+.projectname {
+  font-family: 'GramercyLight', 'garamond';
+  font-size: 36px; 
+  color: #5C111B;
+  display: block;
+  margin-bottom: 20px;
+  letter-spacing: -2%;
+  line-height: 100%;
+}
+
+.projectdescription {
+  font-family: 'GramercyLight', 'garamond';
+  font-size: 15px; 
+  color: #5C111B;
+  display: block;
+  width: 60%;
+  margin: 0px 0px 20px 0px;
+}
+
+::selection {
+background-color: black;
+  color: white;
+}
+
+.aboutdescription {
+  font-family: 'GramercyLight', 'garamond';  
+  font-size: 18px; 
+  color: #5C111B;
+  display: flex;
+  justify-content: center; /* Horizontal */
+  align-items: center;     /* Vertical */
+  height: 100vh;   /* Full viewport height */
+  width: 50vw;
+  margin: 0 auto; 
+}
+
+#theme-toggle {
+  font-family: 'GramercyLight', 'helvetica';
+  font-size: 16px; 
+  padding: 10px 20px; 
+  border: none; 
+  position: absolute; 
+  bottom: 20px; 
+  cursor: pointer; 
+  color: #FFE74A;
+  background-color: #5C111B;
+}
+
+/* formatting styles */ 
+
+.header {
+  display: flex; 
+  flex-direction: row; 
+  justify-content: space-between; 
+}
+
+.navigation {
+padding: 0px 20px; 
+  display: flex;
+  flex-direction: row; 
+}
+
+.river {
+   display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.projectcard {
+  width: 100%;
+  overflow: hidden;
+  min-width: 0;
+}
+
+.projectcontent {
+  margin: 0px;
+  overflow: hidden;
+}
+
+.imgcarousel {
+  max-height: 363px;
+  height: 363px;
+  align-items: stretch;
+}
+
+.projectimg {
+  padding: 20px 20px 20px 0px; 
+  scroll-snap-align: start;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.projectimg img {
+  border-radius: 10px;
+  height: 100%;
+  width: auto;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.projectimg img {
+  max-height: 100%;
+  width: auto;
+  object-fit: contain;
+}
+
+.expandedpreview {
+  display: none;  
+  transition: all 0.3s ease;
+}
+
+.projectcard.open .expandedpreview {
+  display: block;
+}
+
+.projectcard.open .collapsedpreview .projectname:last-child {
+  transform: rotate(180deg);
+}
+
+.projectcard.open .projectcontent {
+  overflow: visible;
+}
+
+.projectcard.open {
+  overflow: visible;
+}
+
+.collapsedpreview {
+  position: relative; 
+  top: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.collapsedpreview .projectname:last-child {
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.aboutimage {
+  position: absolute;   /* ← THIS was missing */
+  top: 50%;
+  left: 50%;
+  transform: translate(120%, -50%);
+  width: 260px;
+  opacity: 0;
+  pointer-events: none;
+  justify-content: center; /* Horizontal */
+  align-items: center;     /* Vertical */
+  max-width: 600px;   
+}
+
+.aboutwrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.aboutwrapper:hover .aboutimage {
+  opacity: 1;
+}
+
+
+/* mobile styles */
+
+@media (min-width: 200px) and (max-width:768px) {
+ body {
+  margin: 0;
+  padding: 20px;
+}
+
+  h1 {
+  max-width: 100%;
+  line-height: 115%;
+  margin: 0px 0px 20px 0px;
+  font-size: 20px;
+}
+
+  .projectname {
+  font-size: 24px; 
+}
+
+.imgcarousel {
+    display: flex;
+    flex-direction: row;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    width: 100%;
+    height: auto; /* let content define height */
+    gap: 16px;
+    padding: 0 16px; /* optional: inset so first/last image isn't flush to edge */
+    box-sizing: border-box;
+  }
+
+.projectimg {
+    flex: 0 0 calc(100% - 32px); /* subtract gap+padding so it still snaps one at a time */
+    scroll-snap-align: start;
+    padding: 20px 0px; /* remove right padding so it fills edge to edge */
+    box-sizing: border-box;
+  }
+
+ .projectimg img {
+    width: 100%;   /* fill the full width */
+    height: auto;  /* maintain aspect ratio */
+    object-fit: contain;
+  }
+
+
+.projectcard {
+  overflow-x: visible; /* or remove overflow-x: hidden — it clips the carousel */
+}
+  
+.projectcontent {
+  display: flex;
+  flex-direction: column;
+  margin: 20px 0px;
+}
+  
+.projecttext, .projecttext::before,
+.projecttext::after  {
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+  .projectdescription {
+  width: 100%;
+    font-size: 18px; 
+  }
+
+  .links {
+  display: flex; 
+  flex-direction: row; 
+  justify-content: start; 
+  padding: 0px;
+}
+
+  .navigation {
+  display: flex;
+  flex-direction: column; 
+}
+
+.navbutton {
+  padding: 0px;
+  align-items: end;
+  }
+  
+ .projectcard.open .expandedpreview {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .collapsedpreview {
+    position: relative;
+    padding-right: 30px; /* make room for the arrow */
+  }
+
+  .collapsedpreview .projectname:last-child {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+
+  .aboutdescription {
+  font-size: 15px;
+  display: flex;
+  justify-content: center; /* Horizontal */
+  align-items: center;     /* Vertical */
+  width: 100%;
+  margin: 0 auto; 
+}
+
+  .river {
+  box-sizing: border-box;
+  max-width: 100%;
+  padding: 0px;
+}
+  
+}​

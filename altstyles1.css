@@ -1,6 +1,6 @@
 @font-face {
-  font-family: 'AsfaltBold';
-  src: url('docs/ABCAsfalt-CondensedBold-Trial.otf');
+  font-family: 'EditorialOld';
+  src: url('docs/PPEditorialOld-Regular.otf');
   font-style: normal;
 }
 
@@ -15,7 +15,7 @@ html {
 }
 
 h1 {
-  font-family: 'FavoritBook' 'helvetica';
+  font-family: 'EditorialOld' 'garamond';
   font-size: 28px; 
   letter-spacing: 1.25px; 
   color: #0635F0;
@@ -84,7 +84,7 @@ text-decoration: none;
 }
 
 .projectname {
-  font-family: 'AsfaltBold';
+  font-family: 'EditorialOld';
   font-size: 48px; 
   color: #0635F0;
   display: block;

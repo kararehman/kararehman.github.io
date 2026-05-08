@@ -1,0 +1,316 @@
+@font-face {
+  font-family: 'Roboto-Mono-Regular';
+  src: url('docs/RobotoMono-Regular.ttf');
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Roboto-Mono-Light';
+  src: url('docs/RobotoMono-Light.ttf');
+  font-style: normal;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  letter-spacing: -0.25px;
+}
+
+h1 {
+  font-family: 'Roboto-Mono-Regular', 'garamond';
+  font-size: 18px; 
+  color: #CFE7ED;
+  display: block;
+  margin: 20px;
+  max-width: 60%;
+  align-items: center;
+}
+
+::selection {
+background-color: black;
+  color: white;
+}
+
+body {
+  color: #852F2F;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.header {
+  display: flex; 
+  flex-direction: row; 
+  justify-content: space-between; 
+}
+
+.navigation {
+padding: 0px 20px; 
+  display: flex;
+  flex-direction: row; 
+}
+
+.navbutton {
+  font-family: 'Roboto-Mono-Regular', 'garamond';
+  font-size: 16px; 
+  color: #CFE7ED;
+  display: flex; 
+  flex-direction: row; 
+  padding: 0px 20px;
+  align-items: center;     /* Vertical */
+}
+
+a, a:active {
+text-decoration: none;
+  color: #CFE7ED;
+}
+
+.river {
+  box-sizing: border-box;
+  max-width: 100%;
+  padding: 0px 20px;
+}
+
+.projectcard {
+  width: 100%;
+  overflow: hidden;
+  flex: 1;
+}
+
+.projectcontent {
+  margin: 0px;
+  overflow: hidden;
+}
+
+.projectname {
+  font-family: 'Roboto-Mono-Regular', 'garamond';
+  font-size: 15px; 
+  color: #CFE7ED;
+  display: block;
+  margin-bottom: 20px;
+}
+
+.projectdescription {
+  font-family: 'Roboto-Mono-Light', 'garamond';
+  font-size: 15px; 
+  color: #CFE7ED;
+  display: block;
+  width: 60%;
+  margin: 0px 0px 20px 0px;
+}
+
+.imgcarousel {
+  display: flex;
+  flex-direction: row;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+  align-items: center;
+  gap: 16px;
+  max-height: 363px;
+}
+
+.projectimg {
+  padding: 20px 20px 20px 0px; 
+  scroll-snap-align: start;
+  height: 363px; /* set whatever max height you want */
+  max-height: 363px;
+  align-items: stretch;
+}
+
+.projectimg img {
+  border-radius: 10px;
+  height: 100%;
+  width: auto;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.imgcaption {
+  font-family: 'Roboto-Mono-Light', 'garamond';
+  font-size: 14px; 
+  text-transform: uppercase;
+  padding: 10px 0px;
+  color: #CFE7ED;
+}
+
+.projectimg img {
+  max-height: 100%;
+  width: auto;
+  object-fit: contain;
+}
+
+.expandedpreview {
+  display: none;  
+  transition: all 0.3s ease;
+}
+
+.projectcard.open .expandedpreview {
+  display: block;
+}
+
+.projectcard.open .collapsedpreview .projectname:last-child {
+  transform: rotate(180deg);
+}
+
+.collapsedpreview {
+  position: relative; 
+  top: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.collapsedpreview .projectname:last-child {
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.aboutdescription {
+  font-family: 'Roboto-Mono-Regular', 'garamond';
+  font-size: 18px; 
+  color: #CFE7ED;
+  display: flex;
+  justify-content: center; /* Horizontal */
+  align-items: center;     /* Vertical */
+  height: 100vh;   /* Full viewport height */
+  width: 50vw;
+  margin: 0 auto; 
+}
+
+.aboutimage {
+  position: absolute;   /* ← THIS was missing */
+  top: 50%;
+  left: 50%;
+  transform: translate(120%, -50%);
+  width: 260px;
+  opacity: 0;
+  pointer-events: none;
+  justify-content: center; /* Horizontal */
+  align-items: center;     /* Vertical */
+  max-width: 600px;   
+}
+
+.aboutwrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.aboutwrapper:hover .aboutimage {
+  opacity: 1;
+}
+
+
+/* mobile styles */
+
+@media (min-width: 200px) and (max-width:768px) {
+ body {
+  margin: 0;
+  padding: 20px;
+}
+
+  h1 {
+  max-width: 100%;
+  line-height: 115%;
+  margin: 0px 0px 20px 0px;
+}
+
+.imgcarousel {
+    display: flex;
+    flex-direction: row;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    width: 100%;
+    height: auto; /* let content define height */
+    gap: 16px;
+    padding: 0 16px; /* optional: inset so first/last image isn't flush to edge */
+    box-sizing: border-box;
+  }
+
+.projectimg {
+    flex: 0 0 calc(100% - 32px); /* subtract gap+padding so it still snaps one at a time */
+    scroll-snap-align: start;
+    padding: 20px 0px; /* remove right padding so it fills edge to edge */
+    box-sizing: border-box;
+  }
+
+ .projectimg img {
+    width: 100%;   /* fill the full width */
+    height: auto;  /* maintain aspect ratio */
+    object-fit: contain;
+  }
+
+
+.projectcard {
+  overflow-x: visible; /* or remove overflow-x: hidden — it clips the carousel */
+}
+  
+.projectcontent {
+  display: flex;
+  flex-direction: column;
+  margin: 20px 0px;
+}
+  
+.projecttext, .projecttext::before,
+.projecttext::after  {
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+  .projectdescription {
+  width: 100%;
+  }
+
+  .links {
+  display: flex; 
+  flex-direction: row; 
+  justify-content: start; 
+  padding: 0px;
+}
+
+  .navigation {
+  display: flex;
+  flex-direction: column; 
+}
+
+.navbutton {
+  padding: 0px;
+  align-items: end;
+  }
+  
+ .projectcard.open .expandedpreview {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .collapsedpreview {
+    position: relative;
+    padding-right: 30px; /* make room for the arrow */
+  }
+
+  .collapsedpreview .projectname:last-child {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+
+  .aboutdescription {
+  font-size: 15px;
+  display: flex;
+  justify-content: center; /* Horizontal */
+  align-items: center;     /* Vertical */
+  width: 100%;
+  margin: 0 auto; 
+}
+
+  .river {
+  box-sizing: border-box;
+  max-width: 100%;
+  padding: 0px;
+}
+  
+}​

@@ -200,13 +200,14 @@ text-decoration: none;
 #theme-toggle {
   font-family: 'RadioRegular', 'helvetica';
   font-size: 16px; 
-  padding: 10px; 
+  padding: 10px 20px; 
   border: none; 
   position: absolute; 
   bottom: 20px; 
   cursor: pointer; 
   color: #822828;
   background-color: #E5460C;
+  text-transform: uppercase;
 }
 
 

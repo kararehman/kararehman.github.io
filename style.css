@@ -201,6 +201,13 @@ text-decoration: none;
   opacity: 1;
 }
 
+#theme-toggle {
+  font-family: 'Roboto-Mono-Regular', 'garamond';
+  font-size: 16px; 
+  padding: 10px; 
+
+}
+
 
 /* mobile styles */
 

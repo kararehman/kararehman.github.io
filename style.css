@@ -205,7 +205,10 @@ text-decoration: none;
   font-family: 'Roboto-Mono-Regular', 'garamond';
   font-size: 16px; 
   padding: 10px; 
-
+  border: none; 
+  position: absolute; 
+  bottom: 20px; 
+  cursor: pointer; 
 }
 
 

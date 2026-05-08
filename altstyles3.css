@@ -22,7 +22,7 @@ hr {
 body {
   margin: 0;
   letter-spacing: -0.25px;
-  background-color: #FFE74A;
+  background-color: #FFEA64;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -101,7 +101,7 @@ background-color: black;
   position: absolute; 
   bottom: 20px; 
   cursor: pointer; 
-  color: #FFE74A;
+  color: #FFEA64;
   background-color: #5C111B;
 }
 

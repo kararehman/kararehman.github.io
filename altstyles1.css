@@ -15,7 +15,7 @@ html {
 }
 
 h1 {
-  font-family: 'EditorialOld' 'garamond';
+  font-family: 'EditorialOld', 'garamond';
   font-size: 28px; 
   letter-spacing: 1.25px; 
   color: #0635F0;
@@ -52,7 +52,7 @@ padding: 0px 20px;
 }
 
 .navbutton {
-  font-family: 'FavoritBook' 'helvetica';
+  font-family: 'FavoritBook', 'helvetica';
   font-size: 16px; 
   color: #0635F0;
   display: flex; 

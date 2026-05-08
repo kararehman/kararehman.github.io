@@ -76,6 +76,8 @@ text-decoration: none;
 
 .projectcard {
   flex: 1; /* each card takes equal width */
+  overflow: hidden;
+  min-width: 0; /* prevents flex children from overflowing */
 }
 
 .projectcontent {
@@ -103,36 +105,25 @@ text-decoration: none;
 }
 
 .imgcarousel {
-  display: flex;
-  flex-direction: row;
-  overflow-x: scroll;
-  scroll-snap-type: x mandatory;
-  align-items: center;
-  gap: 16px;
-  max-height: 363px;
+  flex-direction: column;
+  overflow-x: visible;
+  overflow-y: visible;
+  scroll-snap-type: none;
+  height: auto;
 }
 
 .projectimg {
-  padding: 20px 20px 20px 0px; 
-  scroll-snap-align: start;
-  height: 363px; /* set whatever max height you want */
-  max-height: 363px;
-  align-items: stretch;
+  flex: 0 0 auto;
+  width: 100%;
+  padding: 0 0 16px 0;
 }
 
 .projectimg img {
-  border-radius: 10px;
-  height: 100%;
-  width: auto;
-  max-height: 100%;
+  width: 100%;
+  height: auto;
   object-fit: contain;
 }
 
-.projectimg img {
-  max-height: 100%;
-  width: auto;
-  object-fit: contain;
-}
 
 /* force expanded state */
 .expandedpreview {

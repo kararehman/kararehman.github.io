@@ -69,7 +69,7 @@ text-decoration: none;
 .projectdescription {
   font-family: 'RadioRegular', 'helvetica';
   font-size: 15px; 
-  color: #0635F0;
+  color: #E5460C;
   display: block;
   width: 60%;
   margin: 0px 0px 20px 0px;
@@ -120,16 +120,15 @@ padding: 0px 20px;
 }
 
 .river {
-  display: flex;
-  flex-direction: row; /* cards side by side */
-  align-items: flex-start;
+   display: flex;
+  flex-direction: column;
   gap: 20px;
 }
 
 .projectcard {
-  flex: 1; /* each card takes equal width */
+  width: 100%;
   overflow: hidden;
-  min-width: 0; /* prevents flex children from overflowing */
+  min-width: 0;
 }
 
 .projectcontent {

@@ -84,10 +84,11 @@ text-decoration: none;
 
 .projectname {
   font-family: 'AsfaltBold';
-  font-size: 24px; 
+  font-size: 48px; 
   color: #CFE7ED;
   display: block;
   margin-bottom: 20px;
+  letter-spacing: 2px;
 }
 
 .projectdescription {

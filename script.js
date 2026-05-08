@@ -10,3 +10,9 @@ document.querySelectorAll('.projectcard.open').forEach(card => {
         card.classList.remove('open');
       }
     });
+
+function toggleTheme() {
+  const sheet = document.getElementById('theme-stylesheet');
+  const isDefault = sheet.getAttribute('href') === 'style.css';
+  sheet.setAttribute('href', isDefault ? 'altstyles1.css' : 'style.css');
+}

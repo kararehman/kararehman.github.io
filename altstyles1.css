@@ -17,6 +17,7 @@ html {
 h1 {
   font-family: 'AsfaltBold';
   font-size: 28px; 
+  letter-spacing: 2px; 
   color: #CFE7ED;
   display: block;
   margin: 20px;

@@ -217,6 +217,10 @@ text-decoration: none;
   background-color: #FFF6E8; 
 }
 
+#theme-toggle:hover {
+  background-color: #FFF6E8; 
+}
+
 /*thumbnail on collapsed view formatting*/
 .thumbnail {
   opacity: 0;

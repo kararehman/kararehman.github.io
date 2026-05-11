@@ -33,7 +33,7 @@ body {
 /* text styles */
 h1 {
   font-family: 'RadioBlack', 'helvetica';
-  font-size: 15px; 
+  font-size: 16px; 
   color: #E5460C;
   display: block;
   max-width: 60%;
@@ -42,12 +42,20 @@ h1 {
   line-height: 100%;
 }
 
+.navigation {
+  padding: 0px 20px; 
+  display: flex;
+  flex-direction: row; 
+}
+
+
 .navbutton {
   font-family: 'RadioBlack', 'helvetica';
-  font-size: 15px; 
+  font-size: 16px; 
   color: #E5460C;
   display: flex; 
   flex-direction: row; 
+  padding: 0px 20px;
   align-items: center; 
 }
 

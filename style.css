@@ -90,13 +90,12 @@ text-decoration: none;
 }
 
 .thumbnail {
-  display: hidden;
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
-.thumbnail:hover {
-  display: inline-block;
-  max-height: 150px; 
-  width: auto; 
+.collapsedpreview:hover .thumbnail {
+  opacity: 1;
 }
 
 .projectcontent {

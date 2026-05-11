@@ -346,6 +346,7 @@ padding: 0px 20px;
 
   .aboutdescription {
   font-size: 18px;
+  line-height: 110%;
   display: flex;
   justify-content: center; /* Horizontal */
   align-items: center;     /* Vertical */

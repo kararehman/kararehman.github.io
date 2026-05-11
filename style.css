@@ -175,37 +175,22 @@ text-decoration: none;
 
 .aboutdescription {
   font-family: 'AugerMonoRegular', 'Courier New';
-  font-size: 36px; 
+  font-size: 18px; 
+  text-transform: uppercase; 
   color: black;
   display: flex;
   justify-content: center; /* Horizontal */
   align-items: center;     /* Vertical */
   height: 100vh;   /* Full viewport height */
-  width: 90%;
+  width: 60vw;
   margin: 0 auto; 
 }
 
-.aboutimage {
-  position: absolute;   /* ← THIS was missing */
-  top: 50%;
-  left: 50%;
-  transform: translate(120%, -50%);
-  width: 260px;
-  opacity: 0;
-  pointer-events: none;
-  justify-content: center; /* Horizontal */
-  align-items: center;     /* Vertical */
-  max-width: 600px;   
-}
 
 .aboutwrapper {
   position: relative;
   display: flex;
   justify-content: center;
-}
-
-.aboutwrapper:hover .aboutimage {
-  opacity: 1;
 }
 
 #theme-toggle {

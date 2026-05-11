@@ -89,6 +89,10 @@ text-decoration: none;
   flex: 1;
 }
 
+.projectcard:hover {
+  background-color: yellow;
+}
+
 .projectcontent {
   margin: 0px;
   overflow: hidden;

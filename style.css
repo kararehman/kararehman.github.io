@@ -89,7 +89,7 @@ text-decoration: none;
   flex: 1;
 }
 
-.projectcard:hover {
+.projecttext:hover {
   background-color: yellow;
 }
 

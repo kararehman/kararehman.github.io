@@ -109,8 +109,8 @@ text-decoration: none;
   opacity: 1;
 }
 
-.expandedpreview:hover .thumbnail {
-  opacity: 0;
+.projectcard.open .thumbnail {
+  display: none;
 }
 
 .projectcontent {

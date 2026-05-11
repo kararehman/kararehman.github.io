@@ -294,7 +294,6 @@ text-decoration: none;
 .projecttext, .projecttext::before,
 .projecttext::after  {
     width: 100%;
-    margin-bottom: 20px;
     padding: 0px;
     box-sizing: border-box;
 }

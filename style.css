@@ -92,6 +92,7 @@ text-decoration: none;
 .thumbnail {
   opacity: 0;
   transition: opacity 0.3s ease;
+  margin-left: 20px;
 }
 
 .thumbnail img {

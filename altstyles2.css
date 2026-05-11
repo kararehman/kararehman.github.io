@@ -145,9 +145,15 @@ padding: 0px 20px;
 }
 
 .imgcarousel {
+  display: flex;
+  flex-direction: row;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+  align-items: center;
+  gap: 16px;
   max-height: 363px;
   height: 363px;
-  align-items: stretch;
+}
 }
 
 .projectimg {

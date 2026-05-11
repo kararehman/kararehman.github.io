@@ -109,9 +109,9 @@ background-color: black;
   background-color: #603333;
 }
 
-#theme-toggle {
+#theme-toggle:hover {
   color: #FFEA64;
-  background-color: #603333;
+  background-color: #FFF6E8;
   font-style: italic; 
 }
 

@@ -103,7 +103,6 @@ text-decoration: none;
 .previewleft {
   display: flex;
   flex-direction: row;
-  padding: 40px;
 }
 
 .collapsedpreview:hover .thumbnail {

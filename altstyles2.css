@@ -250,6 +250,31 @@ padding: 0px 20px;
   opacity: 1;
 }
 
+/*thumbnail on collapsed view formatting*/
+.thumbnail {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  margin-left: 20px;
+}
+
+.thumbnail img {
+  max-height: 40px;
+  width: auto;
+}
+
+.previewleft {
+  display: flex;
+  flex-direction: row;
+}
+
+.collapsedpreview:hover .thumbnail {
+  opacity: 1;
+}
+
+.projectcard.open .thumbnail {
+  display: none;
+}
+
 
 /* mobile styles */
 

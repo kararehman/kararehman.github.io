@@ -331,5 +331,9 @@ text-decoration: none;
   max-width: 100%;
   padding: 0px;
 }
+
+  .projectname {
+  font-size: 28px; 
+  }
   
 }​

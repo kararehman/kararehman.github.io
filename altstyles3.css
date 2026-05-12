@@ -42,6 +42,15 @@ h1 {
   line-height: 100%;
 }
 
+.homebutton {
+  font-family: 'GramercyLight', 'garamond';
+  font-size: 15px; 
+  color: #603333;
+  position: fixed;
+  top: 20px; 
+  left: 20px;
+}
+
 .navbutton {
   font-family: 'GramercyLight', 'garamond';
   font-size: 15px; 

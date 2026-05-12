@@ -105,7 +105,7 @@ background-color: #E5460C;
 }
 
 #theme-toggle {
-  font-family: 'RadioRegular', 'helvetica';
+  font-family: 'RadioBlack', 'helvetica';
   font-size: 16px; 
   padding: 10px 20px; 
   border: none; 
@@ -116,7 +116,7 @@ background-color: #E5460C;
   cursor: pointer; 
   color: #822828;
   background-color: #E5460C;
-  text-transform: uppercase;
+  text-transform: none;
 }
 
 #theme-toggle:hover {

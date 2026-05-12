@@ -218,6 +218,7 @@ text-decoration: none;
 }
 
 #theme-toggle:hover {
+  color: #009751;
   background-color: #FFF6E8; 
 }
 

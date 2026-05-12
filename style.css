@@ -214,6 +214,7 @@ text-decoration: none;
   text-transform: uppercase; 
   letter-spacing: -1.5px;
   color: black;
+  max-width: 55ch;
   min-height: 100vh;
   margin: 60px 20px;
 }

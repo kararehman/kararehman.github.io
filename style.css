@@ -186,7 +186,6 @@ text-decoration: none;
   flex: 1;
 }
 
-
 .aboutdescription {
   font-family: 'AugerMonoRegular', 'Courier New';
   font-size: 36px; 
@@ -325,11 +324,10 @@ text-decoration: none;
   .aboutdescription {
   font-size: 18px;
   line-height: 110%;
-  display: flex;
-  justify-content: center; /* Horizontal */
+  display: grid;
   align-items: center;     /* Vertical */
   width: 100%;
-  margin: 0 auto; 
+  margin: 40px 0px; 
 }
 
   .river {

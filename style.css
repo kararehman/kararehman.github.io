@@ -149,7 +149,7 @@ text-decoration: none;
 }
 
 .projectimg {
-  padding: 20px 20px 20px 0px; 
+  padding: 10px 10px 10px 0px; 
   scroll-snap-align: start;
   height: 363px; /* set whatever max height you want */
   max-height: 363px;

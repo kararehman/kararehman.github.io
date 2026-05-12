@@ -87,7 +87,6 @@ text-decoration: none;
 .projectcard {
   width: 100%;
   overflow: hidden;
-  flex: 1;
 }
 
 .projectcontent {

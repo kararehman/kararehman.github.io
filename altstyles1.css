@@ -198,6 +198,7 @@ text-decoration: none;
   bottom: 20px; 
   right: 20px; 
   cursor: pointer; 
+  border: none;
   border-radius: 0px;
   text-decoration: none; 
   background-color: white; 
@@ -205,7 +206,6 @@ text-decoration: none;
 
 #theme-toggle:hover {
   color: #1D4BB6;
-  border: #1D4BB6 1px solid; 
   background-color: #1DB679; 
 }
 

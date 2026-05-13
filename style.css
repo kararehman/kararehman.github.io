@@ -38,10 +38,6 @@ h1 {
   align-items: center;
 }
 
-h1:hover {
-  color: red;
-}
-
 .homebutton {
   font-family: 'AugerMonoBold', 'Courier New';
   font-size: 15px; 
@@ -116,6 +112,11 @@ text-decoration: none;
   line-height: 110%;
   text-transform: uppercase; 
   }
+
+projectname:hover {
+  color: red;
+}
+
 
 .projectdescription {
   font-family: 'AugerMonoLight', 'Courier New';

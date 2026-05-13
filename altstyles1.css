@@ -193,20 +193,20 @@ text-decoration: none;
   font-family: 'EditorialOld', 'garamond';
   font-size: 16px; 
   padding: 10px 20px; 
-  color: #009751;
+  color: #1D4BB6;
   position: fixed; 
   bottom: 20px; 
   right: 20px; 
   cursor: pointer; 
-  border: #009751 1px solid; 
   border-radius: 0px;
   text-decoration: none; 
-  background-color: #FFF6E8; 
+  background-color: white; 
 }
 
 #theme-toggle:hover {
-  color: #009751;
-  background-color: #FFF6E8; 
+  color: #1D4BB6;
+  border: #1D4BB6 1px solid; 
+  background-color: #1DB679; 
 }
 
 

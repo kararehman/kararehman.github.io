@@ -38,6 +38,10 @@ h1 {
   align-items: center;
 }
 
+h1:hover {
+  color: red;
+}
+
 .homebutton {
   font-family: 'AugerMonoBold', 'Courier New';
   font-size: 15px; 

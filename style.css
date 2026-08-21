@@ -222,6 +222,18 @@ text-decoration: none;
   text-transform: italic; 
 }
 
+#randomimg-container {
+  position: relative; /* required so absolutely positioned children are placed relative to this div */
+  width: 100%;
+  height: 600px; /* give it explicit height, since absolutely positioned children won't create height on their own */
+}
+
+.floating-image {
+  width: 150px; /* match this to the maxLeft/maxTop math above */
+  height: auto;
+  position: absolute;
+}
+
 
 /* mobile styles */
 

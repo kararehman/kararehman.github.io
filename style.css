@@ -237,8 +237,8 @@ text-decoration: none;
 }
 
 .gardenimg {
-  max-width: 600px;
-  height: auto; 
+  width: 600px;
+  max-height: auto; 
 }
 
 /* mobile styles */

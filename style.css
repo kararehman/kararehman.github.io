@@ -224,6 +224,7 @@ text-decoration: none;
 
 .gardenimg-container {
   position: relative; 
+  margin: 20px;
 }
 
 .gardenimg {

@@ -239,6 +239,7 @@ text-decoration: none;
 .gardenimg {
   width: 600px;
   max-height: auto; 
+  border: 1px dashed black;
 }
 
 .gardenproject-title {

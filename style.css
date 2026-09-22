@@ -241,6 +241,14 @@ text-decoration: none;
   max-height: auto; 
 }
 
+.gardenproject-title {
+  font-family: 'AugerMonoRegular', 'Courier New';
+  font-size: 15px; 
+  color: black;
+  display: block;
+  margin: 20px 0px;
+}
+
 /* mobile styles */
 
 @media (min-width: 200px) and (max-width:768px) {

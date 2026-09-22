@@ -235,6 +235,7 @@ text-decoration: none;
   position: relative; 
   margin: 20px;
   display: inline-block;
+  object-fit: contain; 
 }
 
 .gardenproj-container {

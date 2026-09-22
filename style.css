@@ -239,8 +239,11 @@ text-decoration: none;
 }
 
 .gardenproj-container {
-  display: block; 
-  width: 600px; 
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  max-width: 800px; /* roughly 2 cards' width — prevents a 3rd from squeezing in */
+
 }
 
 .gardenimg {

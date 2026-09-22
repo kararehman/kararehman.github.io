@@ -222,18 +222,14 @@ text-decoration: none;
   text-transform: italic; 
 }
 
-#randomimg-container {
-  position: relative; /* required so absolutely positioned children are placed relative to this div */
-  width: 100%;
-  max-height: 600px; /* give it explicit height, since absolutely positioned children won't create height on their own */
+.gardenimg-container {
+  position: relative; 
 }
 
-.floating-image {
-  width: 150px; /* match this to the maxLeft/maxTop math above */
-  height: auto;
-  position: absolute;
+.gardenimg {
+  max-width: 600px;
+  height: auto; 
 }
-
 
 /* mobile styles */
 

@@ -245,13 +245,12 @@ text-decoration: none;
   display: flex;
   flex-direction: row;
   grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
-  gap: 1.5rem;
-  max-width: 1224px; 
+  gap: 1.5rem; 
 }
 
 .gardenproj-container {
   display: flex;
-  flex-direction: coulumn;
+  flex-direction: column;
   width: 100%;
   min-width: 0;
 }

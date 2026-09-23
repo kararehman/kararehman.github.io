@@ -290,8 +290,12 @@ text-decoration: none;
   h1 {
   max-width: 100%;
   line-height: 115%;
-  margin: 20px 0px 0px 0px;
+  margin: 20px 0px 0px 20px;
   position: relative; 
+}
+
+  .header {
+  margin: 10px 0px 0px 20px;
 }
 
 .imgcarousel {
@@ -353,8 +357,6 @@ text-decoration: none;
   display: flex;
   flex-direction: row; 
   position: fixed;
-    top: 20px;
-  margin: 20px 0px;
   justify-content: flex-start;
 }
 
@@ -403,7 +405,7 @@ text-decoration: none;
 }
 
   .gardentitle {
-  margin: 20px 0px 0px 0px;
+  margin: 20px 0px 0px 20px;
 }
   .garden-container {
   position: relative; 

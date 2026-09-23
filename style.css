@@ -284,7 +284,7 @@ text-decoration: none;
 @media (min-width: 200px) and (max-width:768px) {
  body {
   margin: 0;
-  padding: 20px;
+  padding-top: 80px;
 }
 
   h1 {
@@ -355,12 +355,12 @@ text-decoration: none;
   position: fixed;
     top: 20px;
   margin: 20px 0px;
-  justify-content: space-between;
+  justify-content: flex-start;
 }
 
 .navbutton {
   padding: 0px;
-  align-items: end;
+  align-self: flex-end;
   }
   
  .projectcard.open .expandedpreview {

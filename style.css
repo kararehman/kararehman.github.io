@@ -218,6 +218,7 @@ text-decoration: none;
   text-transform: none; 
   background-color: #E4E5E0;
   color: black;
+  display: hidden;
 }
 
 #theme-toggle:hover {

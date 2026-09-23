@@ -349,7 +349,7 @@ text-decoration: none;
 
   .navigation {
   display: flex;
-  flex-direction: column; 
+  flex-direction: row; 
 }
 
 .navbutton {

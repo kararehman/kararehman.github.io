@@ -295,7 +295,7 @@ text-decoration: none;
 }
 
   .header {
-  margin: 10px 0px 0px 20px;
+  margin: 10px 0px 0px 0px;
 }
 
 .imgcarousel {
@@ -357,11 +357,11 @@ text-decoration: none;
   display: flex;
   flex-direction: row; 
   position: fixed;
-  justify-content: flex-start;
+  justify-content: space-evenly;
 }
 
 .navbutton {
-  padding: 0px;
+  padding: 0px 10px 0px 0px;
   align-self: flex-end;
   }
   

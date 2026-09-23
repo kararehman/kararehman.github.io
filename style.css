@@ -243,7 +243,15 @@ text-decoration: none;
   position: relative; 
   margin: 20px;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  gap: 1.5rem;
+  max-width: 1224px; 
+}
+
+.gardenproj-container {
+  display: flex;
+  flex-direction: coulumn;
   width: 100%;
   min-width: 0;
 }
@@ -258,12 +266,7 @@ text-decoration: none;
   display: block;
 }
 
-.gardenproj-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
-  gap: 1.5rem;
-  max-width: 1224px;
-}
+
 
 /* mobile styles */
 

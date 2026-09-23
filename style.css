@@ -259,12 +259,10 @@ text-decoration: none;
   border: 1px dashed black;
   border-radius: 4px;
   max-width: 600px;
-  width: 100%;
   height: auto;
   object-fit: contain;
   display: block;
 }
-
 
 
 /* mobile styles */

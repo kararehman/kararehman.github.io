@@ -240,10 +240,12 @@ text-decoration: none;
 }
 
 .garden-container {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1.5rem;
-  max-width: 1224px;
+  position: relative; 
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-width: 0;
 }
 
 .gardenimg {

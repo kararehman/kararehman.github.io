@@ -391,6 +391,15 @@ text-decoration: none;
   display: none;
 }
 
+  .garden-container {
+  position: relative; 
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  gap: 1.5rem; 
+}
+
   .gardenproj-container {
     grid-template-columns: 1fr;
   }

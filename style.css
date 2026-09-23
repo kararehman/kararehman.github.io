@@ -350,6 +350,8 @@ text-decoration: none;
   .navigation {
   display: flex;
   flex-direction: row; 
+  position: fixed;
+  top: 20px;
 }
 
 .navbutton {

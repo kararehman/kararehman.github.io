@@ -239,6 +239,14 @@ text-decoration: none;
   margin: 20px 0px;
 }
 
+.gardenproject-description {
+  font-family: 'AugerMonoRegular', 'Courier New';
+  font-size: 13px; 
+  color: black;
+  display: block;
+  margin: 20px 0px;
+}
+
 .garden-container {
   position: relative; 
   margin: 20px;

@@ -240,11 +240,10 @@ text-decoration: none;
 }
 
 .garden-container {
-  position: relative; 
-  margin: 20px;
-  display: block;
-  width: 100%;
-  min-width: 0;
+  pdisplay: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  max-width: 1224px;
 }
 
 .gardenimg {
@@ -381,5 +380,9 @@ text-decoration: none;
   .thumbnail {
   display: none;
 }
+
+  .gardenproj-container {
+    grid-template-columns: 1fr;
+  }
   
 }​

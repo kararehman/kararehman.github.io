@@ -289,7 +289,8 @@ text-decoration: none;
   h1 {
   max-width: 100%;
   line-height: 115%;
-  margin: 0px 0px 20px 0px;
+  margin: 20px 0px 0px 0px;
+  position: relative; 
 }
 
 .imgcarousel {

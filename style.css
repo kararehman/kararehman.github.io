@@ -250,10 +250,10 @@ text-decoration: none;
 .garden-container {
   position: relative; 
   margin: 20px;
-  display: flex;
-  flex-direction: row;
-  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
-  gap: 1.5rem; 
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  max-width: 1224px;
 }
 
 .gardenproj-container {
@@ -397,7 +397,7 @@ text-decoration: none;
   margin: 20px;
   display: flex;
   flex-direction: column;
-  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  grid-template-columns: 1fr;
   gap: 1.5rem; 
 }
 

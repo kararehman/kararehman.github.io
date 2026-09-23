@@ -402,6 +402,9 @@ text-decoration: none;
   display: none;
 }
 
+  .gardentitle {
+  margin: 20px 0px 0px 0px;
+}
   .garden-container {
   position: relative; 
   margin: 20px;

@@ -266,11 +266,12 @@ text-decoration: none;
 .gardenimg {
   border: 1px dashed black;
   border-radius: 4px;
+  width: 100%;
+  height: 300px;
   max-width: 600px;
-  height: auto;
   object-fit: contain;
+  background: #f2f2f2; /* fills the empty space around the image */
   display: block;
-  margin: 20px 0px 0px 0px;
 }
 
 

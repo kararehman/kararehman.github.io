@@ -353,6 +353,7 @@ text-decoration: none;
   display: flex;
   flex-direction: row; 
   position: fixed;
+    top: 20px;
   margin: 20px 0px;
   justify-content: space-between;
 }

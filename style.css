@@ -81,6 +81,10 @@ padding: 0px 20px;
   align-items: center;     /* Vertical */
 }
 
+.navbutton:hover {
+  color: red; 
+}
+
 a, a:active {
 text-decoration: none;
   color: black;

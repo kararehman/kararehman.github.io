@@ -236,7 +236,7 @@ text-decoration: none;
   font-size: 15px; 
   color: black;
   display: block;
-  margin: 20px 0px;
+  margin: 20px 0px 0px 0px;
 }
 
 .gardenproject-description {
@@ -244,7 +244,7 @@ text-decoration: none;
   font-size: 13px; 
   color: black;
   display: block;
-  margin: 20px 0px;
+  margin: 20px 0px 0px 0px;
 }
 
 .garden-container {
@@ -270,6 +270,7 @@ text-decoration: none;
   height: auto;
   object-fit: contain;
   display: block;
+  margin: 20px 0px 0px 0px;
 }
 
 

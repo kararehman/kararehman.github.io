@@ -353,6 +353,7 @@ text-decoration: none;
   flex-direction: row; 
   position: fixed;
   top: 20px;
+  justify-content: space-between;
 }
 
 .navbutton {

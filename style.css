@@ -234,7 +234,8 @@ text-decoration: none;
 .gardenimg-container {
   position: relative; 
   margin: 20px;
-  display: inline-block;
+  display: block;
+  width: 100%;
 }
 
 .gardenimg {
@@ -244,14 +245,18 @@ text-decoration: none;
   width: 100%;
   height: auto;
   object-fit: contain;
+  display: block; /* prevents inline-image whitespace gap */
 }
 
 .gardenproj-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 1.5rem;
-  max-width: 800px; /* roughly 2 cards' width — prevents a 3rd from squeezing in */
+  max-width: 224px; /* roughly 2 cards' width — prevents a 3rd from squeezing in */
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
 }
+
+
 
 .gardenproject-title {
   font-family: 'AugerMonoRegular', 'Courier New';

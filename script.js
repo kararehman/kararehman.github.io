@@ -30,46 +30,57 @@ window.addEventListener('DOMContentLoaded', () => {
 });
 
 
-// Assumes you have a div like: <div id="image-container"></div>
-const container = document.getElementById('randomimg');
+document.addEventListener('DOMContentLoaded', function () {
+  var containers = document.querySelectorAll('.gardenproj-container');
+  var gardenArea = document.querySelector('.garden-container');
+  var captionBox = document.getElementById('garden-caption');
+  var captionTitle = captionBox.querySelector('.caption-title');
+  var captionDesc = captionBox.querySelector('.caption-description');
 
-// List your image paths here
-const images = [
-  'images/photo1.jpg',
-  'images/photo2.jpg',
-  'images/photo3.jpg',
-  'images/photo4.jpg'
-];
+  function scatterImages() {
+    var areaWidth = gardenArea.clientWidth;
+    var areaHeight = gardenArea.clientHeight;
+    var reserveWidth = areaWidth * 0.35;
+    var reserveHeight = areaHeight * 0.35;
 
-function randomizeImages() {
-  const containerWidth = container.offsetWidth;
-  const containerHeight = container.offsetHeight;
+    containers.forEach(function (container) {
+      var w = container.offsetWidth || 180;
+      var h = container.offsetHeight || 180;
+      var maxLeft = areaWidth - w;
+      var maxTop = areaHeight - h;
 
-  images.forEach((src) => {
-    const img = document.createElement('img');
-    img.src = src;
-    img.classList.add('floating-image'); // for styling (size, border-radius, etc.)
+      var left, top, attempts = 0;
+      do {
+        left = Math.random() * maxLeft;
+        top = Math.random() * maxTop;
+        attempts++;
+      } while (
+        left > areaWidth - reserveWidth - w &&
+        top > areaHeight - reserveHeight - h &&
+        attempts < 20
+      );
 
-    // Set absolute positioning so images can overlap freely
-    img.style.position = 'absolute';
+      var rotation = (Math.random() * 10 - 5).toFixed(2);
+      container.style.left = left + 'px';
+      container.style.top = top + 'px';
+      container.style.transform = 'rotate(' + rotation + 'deg)';
+    });
+  }
 
-    // Randomize top/left, leaving a margin so images don't get cut off at edges
-    const maxLeft = containerWidth - 150;  // adjust 150 to your image width
-    const maxTop = containerHeight - 150;  // adjust 150 to your image height
+  scatterImages();
+  window.addEventListener('resize', scatterImages);
 
-    const randomLeft = Math.random() * Math.max(maxLeft, 0);
-    const randomTop = Math.random() * Math.max(maxTop, 0);
+  containers.forEach(function (container) {
+    var title = container.querySelector('.gardenproject-title').innerText;
+    var desc = container.querySelector('.gardenproject-description').innerText;
 
-    img.style.left = `${randomLeft}px`;
-    img.style.top = `${randomTop}px`;
-
-    // Optional: slight random rotation for a more organic, scattered look
-    const randomRotation = Math.random() * 30 - 15; // -15deg to 15deg
-    img.style.transform = `rotate(${randomRotation}deg)`;
-
-    container.appendChild(img);
+    container.addEventListener('mouseenter', function () {
+      captionTitle.innerText = title;
+      captionDesc.innerText = desc;
+      captionBox.classList.add('visible');
+    });
+    container.addEventListener('mouseleave', function () {
+      captionBox.classList.remove('visible');
+    });
   });
-}
-
-// Run once the page loads
-window.addEventListener('load', randomizeImages);
+});

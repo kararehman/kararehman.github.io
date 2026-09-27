@@ -42,72 +42,81 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   function scatterImages() {
-    if (!isDesktop()) {
-      // let the mobile CSS take over cleanly
-      gardenArea.style.height = '';
-      containers.forEach(function (c) {
-        c.style.left = '';
-        c.style.top = '';
-        c.style.transform = '';
-      });
-      return;
-    }
-
-    var areaWidth = gardenArea.clientWidth;
-
-    // size the container to fit everything, so nothing gets clipped
-    var totalArea = 0;
+  if (!isDesktop()) {
+    gardenArea.style.height = '';
     containers.forEach(function (c) {
-      totalArea += c.offsetWidth * c.offsetHeight;
+      c.style.left = '';
+      c.style.top = '';
+      c.style.transform = '';
     });
-    var neededHeight = Math.max((totalArea * 2.2) / areaWidth, window.innerHeight * 1.1);
-    gardenArea.style.height = neededHeight + 'px';
-
-    var areaHeight = neededHeight;
-    var reserveWidth = areaWidth * 0.35;
-    var reserveTop = window.innerHeight * 0.65; // bottom-right of the ON-LOAD viewport only
-    var reserveBottom = window.innerHeight;
-
-    containers.forEach(function (container) {
-      var w = container.offsetWidth;
-      var h = container.offsetHeight;
-      var maxLeft = Math.max(areaWidth - w, 0);
-      var maxTop = Math.max(areaHeight - h, 0);
-
-      var left, top, attempts = 0;
-      do {
-        left = Math.random() * maxLeft;
-        top = Math.random() * maxTop;
-        attempts++;
-      } while (
-        attempts < 20 &&
-        left > areaWidth - reserveWidth &&
-        top + h > reserveTop &&
-        top < reserveBottom
-      );
-
-      var rotation = (Math.random() * 10 - 5).toFixed(2);
-      container.style.left = left + 'px';
-      container.style.top = top + 'px';
-      container.style.transform = 'rotate(' + rotation + 'deg)';
-    });
+    hideScrollCue();
+    return;
   }
 
-  window.addEventListener('load', scatterImages);
-  window.addEventListener('resize', scatterImages);
+  var areaWidth = gardenArea.clientWidth;
+  var viewportHeight = window.innerHeight;
+
+  // how much space the images actually need, packed reasonably tight
+  var totalArea = 0;
+  containers.forEach(function (c) {
+    totalArea += c.offsetWidth * c.offsetHeight;
+  });
+  var packedHeight = (totalArea * 1.4) / areaWidth;
+
+  // only grow past one viewport if the images genuinely don't fit in it
+  var neededHeight = Math.max(packedHeight, viewportHeight);
+  gardenArea.style.height = neededHeight + 'px';
+
+  var areaHeight = neededHeight;
+  var reserveWidth = areaWidth * 0.35;
+  var reserveTop = viewportHeight * 0.65;
+  var reserveBottom = viewportHeight;
 
   containers.forEach(function (container) {
-    var title = container.querySelector('.gardenproject-title').innerText;
-    var desc = container.querySelector('.gardenproject-description').innerText;
+    var w = container.offsetWidth;
+    var h = container.offsetHeight;
+    var maxLeft = Math.max(areaWidth - w, 0);
 
-    container.addEventListener('mouseenter', function () {
-      if (!isDesktop()) return;
-      captionTitle.innerText = title;
-      captionDesc.innerText = desc;
-      captionBox.classList.add('visible');
-    });
-    container.addEventListener('mouseleave', function () {
-      captionBox.classList.remove('visible');
-    });
+    // bias placement toward the space that's actually visible on load
+    var maxTop = Math.max(Math.min(areaHeight, viewportHeight) - h, 0);
+
+    var left, top, attempts = 0;
+    do {
+      left = Math.random() * maxLeft;
+      top = Math.random() * maxTop;
+      attempts++;
+    } while (
+      attempts < 20 &&
+      left > areaWidth - reserveWidth &&
+      top + h > reserveTop &&
+      top < reserveBottom
+    );
+
+    var rotation = (Math.random() * 10 - 5).toFixed(2);
+    container.style.left = left + 'px';
+    container.style.top = top + 'px';
+    container.style.transform = 'rotate(' + rotation + 'deg)';
   });
+
+  if (areaHeight > viewportHeight + 40) {
+    showScrollCue();
+  } else {
+    hideScrollCue();
+  }
+}
+
+function showScrollCue() {
+  var cue = document.getElementById('scroll-cue');
+  if (!cue) return;
+  cue.classList.add('visible');
+}
+
+function hideScrollCue() {
+  var cue = document.getElementById('scroll-cue');
+  if (!cue) return;
+  cue.classList.remove('visible');
+}
+
+window.addEventListener('scroll', function () {
+  if (window.scrollY > 40) hideScrollCue();
 });

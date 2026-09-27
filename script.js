@@ -36,45 +36,52 @@ document.addEventListener('DOMContentLoaded', function () {
   var captionBox = document.getElementById('garden-caption');
   var captionTitle = captionBox.querySelector('.caption-title');
   var captionDesc = captionBox.querySelector('.caption-description');
+  var activeContainer = null;
 
   function isDesktop() {
     return window.innerWidth > 768;
   }
 
-  function scatterImages() {
-    if (!isDesktop()) {
-      gardenArea.style.height = '';
-      containers.forEach(function (c) {
-        c.style.left = '';
-        c.style.top = '';
-        c.style.transform = '';
-      });
-      hideScrollCue();
-      return;
-    }
+  function showCaption(title, desc) {
+    captionTitle.innerText = title;
+    captionDesc.innerText = desc;
+    captionBox.classList.add('visible');
+  }
 
+  function hideCaption() {
+    captionBox.classList.remove('visible');
+    activeContainer = null;
+  }
+
+  function scatterImages() {
+    var mobile = !isDesktop();
     var areaWidth = gardenArea.clientWidth;
     var viewportHeight = window.innerHeight;
 
-    var totalArea = 0;
-    containers.forEach(function (c) {
-      totalArea += c.offsetWidth * c.offsetHeight;
-    });
-    var packedHeight = (totalArea * 1.4) / areaWidth;
-
-    var neededHeight = Math.max(packedHeight, viewportHeight);
-    gardenArea.style.height = neededHeight + 'px';
+    var neededHeight;
+    if (mobile) {
+      // everything must fit in one screen, no scrolling
+      neededHeight = gardenArea.clientHeight || (viewportHeight - 40);
+    } else {
+      var totalArea = 0;
+      containers.forEach(function (c) {
+        totalArea += c.offsetWidth * c.offsetHeight;
+      });
+      var packedHeight = (totalArea * 1.4) / areaWidth;
+      neededHeight = Math.max(packedHeight, viewportHeight);
+      gardenArea.style.height = neededHeight + 'px';
+    }
 
     var areaHeight = neededHeight;
-    var reserveWidth = areaWidth * 0.35;
-    var reserveTop = viewportHeight * 0.65;
-    var reserveBottom = viewportHeight;
+    var reserveWidth = mobile ? 0 : areaWidth * 0.35;
+    var reserveTop = mobile ? areaHeight : viewportHeight * 0.65;
+    var reserveBottom = mobile ? areaHeight : viewportHeight;
 
     containers.forEach(function (container) {
       var w = container.offsetWidth;
       var h = container.offsetHeight;
       var maxLeft = Math.max(areaWidth - w, 0);
-      var maxTop = Math.max(Math.min(areaHeight, viewportHeight) - h, 0);
+      var maxTop = Math.max(Math.min(areaHeight, mobile ? areaHeight : viewportHeight) - h, 0);
 
       var left, top, attempts = 0;
       do {
@@ -83,6 +90,7 @@ document.addEventListener('DOMContentLoaded', function () {
         attempts++;
       } while (
         attempts < 20 &&
+        !mobile &&
         left > areaWidth - reserveWidth &&
         top + h > reserveTop &&
         top < reserveBottom
@@ -94,7 +102,7 @@ document.addEventListener('DOMContentLoaded', function () {
       container.style.transform = 'rotate(' + rotation + 'deg)';
     });
 
-    if (areaHeight > viewportHeight + 40) {
+    if (!mobile && areaHeight > viewportHeight + 40) {
       showScrollCue();
     } else {
       hideScrollCue();
@@ -123,14 +131,31 @@ document.addEventListener('DOMContentLoaded', function () {
     var title = container.querySelector('.gardenproject-title').innerText;
     var desc = container.querySelector('.gardenproject-description').innerText;
 
+    // desktop: hover
     container.addEventListener('mouseenter', function () {
       if (!isDesktop()) return;
-      captionTitle.innerText = title;
-      captionDesc.innerText = desc;
-      captionBox.classList.add('visible');
+      showCaption(title, desc);
     });
     container.addEventListener('mouseleave', function () {
-      captionBox.classList.remove('visible');
+      if (!isDesktop()) return;
+      hideCaption();
     });
+
+    // mobile: tap to toggle
+    container.addEventListener('click', function (e) {
+      if (isDesktop()) return;
+      e.stopPropagation();
+      if (activeContainer === container && captionBox.classList.contains('visible')) {
+        hideCaption();
+      } else {
+        showCaption(title, desc);
+        activeContainer = container;
+      }
+    });
+  });
+
+  // tapping anywhere else on mobile closes the open caption
+  document.addEventListener('click', function () {
+    if (!isDesktop()) hideCaption();
   });
 });

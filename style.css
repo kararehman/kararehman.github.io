@@ -258,8 +258,8 @@ text-decoration: none;
   margin: 20px;
   width: calc(100% - 40px);
   max-width: 1224px;
-  height: 85vh;
-  overflow: hidden;
+  min-height: 100vh; /* fallback before JS sets the real height */
+  overflow: visible;
 }
 
 .gardenproj-container {

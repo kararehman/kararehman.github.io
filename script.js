@@ -37,17 +37,22 @@ document.addEventListener('DOMContentLoaded', function () {
   var captionTitle = captionBox.querySelector('.caption-title');
   var captionDesc = captionBox.querySelector('.caption-description');
 
+  function isDesktop() {
+    return window.innerWidth > 768;
+  }
+
   function scatterImages() {
+    if (!isDesktop()) return;
     var areaWidth = gardenArea.clientWidth;
     var areaHeight = gardenArea.clientHeight;
     var reserveWidth = areaWidth * 0.35;
     var reserveHeight = areaHeight * 0.35;
 
     containers.forEach(function (container) {
-      var w = container.offsetWidth || 180;
-      var h = container.offsetHeight || 180;
-      var maxLeft = areaWidth - w;
-      var maxTop = areaHeight - h;
+      var w = container.offsetWidth;
+      var h = container.offsetHeight;
+      var maxLeft = Math.max(areaWidth - w, 0);
+      var maxTop = Math.max(areaHeight - h, 0);
 
       var left, top, attempts = 0;
       do {
@@ -67,7 +72,8 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  scatterImages();
+  // wait for images to load so real dimensions are available
+  window.addEventListener('load', scatterImages);
   window.addEventListener('resize', scatterImages);
 
   containers.forEach(function (container) {
@@ -75,6 +81,7 @@ document.addEventListener('DOMContentLoaded', function () {
     var desc = container.querySelector('.gardenproject-description').innerText;
 
     container.addEventListener('mouseenter', function () {
+      if (!isDesktop()) return;
       captionTitle.innerText = title;
       captionDesc.innerText = desc;
       captionBox.classList.add('visible');

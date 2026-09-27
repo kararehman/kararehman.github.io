@@ -122,7 +122,13 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   window.addEventListener('load', scatterImages);
-  window.addEventListener('resize', scatterImages);
+var lastWidth = window.innerWidth;
+window.addEventListener('resize', function () {
+  if (window.innerWidth !== lastWidth) {
+    lastWidth = window.innerWidth;
+    scatterImages();
+  }
+});
   window.addEventListener('scroll', function () {
     if (window.scrollY > 40) hideScrollCue();
   });

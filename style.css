@@ -445,17 +445,35 @@ text-decoration: none;
   .gardentitle {
   margin: 20px 0px 0px 0px;
 }
-  .garden-container {
-  position: relative; 
-  display: flex;
-  flex-direction: column;
-  grid-template-columns: 1fr;
-  gap: 1.5rem; 
+ .garden-container {
+  position: relative;
+  width: calc(100% - 40px);
+  height: calc(100vh - 40px);
   margin: 0px;
+  overflow: hidden;
 }
 
-  .gardenproj-container {
-    grid-template-columns: 1fr;
-  }
+.gardenimg {
+  max-width: 130px;
+  max-height: 130px;
+}
+
+.gardenproj-container .gardenproject-title,
+.gardenproj-container .gardenproject-description {
+  display: none; /* stays hidden here on mobile too — shown via tap in the caption box */
+}
+
+#garden-caption {
+  left: 50%;
+  right: auto;
+  bottom: 20px;
+  transform: translateX(-50%);
+  text-align: center;
+  max-width: calc(100% - 40px);
+}
+
+#scroll-cue {
+  display: none; /* nothing to scroll to on mobile — everything fits in one screen */
+}
   
 }​

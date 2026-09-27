@@ -42,11 +42,31 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   function scatterImages() {
-    if (!isDesktop()) return;
+    if (!isDesktop()) {
+      // let the mobile CSS take over cleanly
+      gardenArea.style.height = '';
+      containers.forEach(function (c) {
+        c.style.left = '';
+        c.style.top = '';
+        c.style.transform = '';
+      });
+      return;
+    }
+
     var areaWidth = gardenArea.clientWidth;
-    var areaHeight = gardenArea.clientHeight;
+
+    // size the container to fit everything, so nothing gets clipped
+    var totalArea = 0;
+    containers.forEach(function (c) {
+      totalArea += c.offsetWidth * c.offsetHeight;
+    });
+    var neededHeight = Math.max((totalArea * 2.2) / areaWidth, window.innerHeight * 1.1);
+    gardenArea.style.height = neededHeight + 'px';
+
+    var areaHeight = neededHeight;
     var reserveWidth = areaWidth * 0.35;
-    var reserveHeight = areaHeight * 0.35;
+    var reserveTop = window.innerHeight * 0.65; // bottom-right of the ON-LOAD viewport only
+    var reserveBottom = window.innerHeight;
 
     containers.forEach(function (container) {
       var w = container.offsetWidth;
@@ -60,9 +80,10 @@ document.addEventListener('DOMContentLoaded', function () {
         top = Math.random() * maxTop;
         attempts++;
       } while (
-        left > areaWidth - reserveWidth - w &&
-        top > areaHeight - reserveHeight - h &&
-        attempts < 20
+        attempts < 20 &&
+        left > areaWidth - reserveWidth &&
+        top + h > reserveTop &&
+        top < reserveBottom
       );
 
       var rotation = (Math.random() * 10 - 5).toFixed(2);
@@ -72,7 +93,6 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  // wait for images to load so real dimensions are available
   window.addEventListener('load', scatterImages);
   window.addEventListener('resize', scatterImages);
 

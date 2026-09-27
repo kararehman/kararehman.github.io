@@ -294,8 +294,6 @@ text-decoration: none;
   max-width: 280px;
   padding: 16px;
   background-color: #E4E5E0;
-  border: 1px solid black;
-  border-radius: 4px;
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.15s ease;

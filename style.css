@@ -267,10 +267,6 @@ text-decoration: none;
   cursor: pointer;
 }
 
-.gardenproj-container:hover {
-  z-index: 10;
-}
-
 .gardenproj-container .gardenproject-title,
 .gardenproj-container .gardenproject-description {
   display: none;

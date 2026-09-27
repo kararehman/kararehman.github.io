@@ -454,8 +454,8 @@ text-decoration: none;
 }
 
 .gardenimg {
-  max-width: 130px;
-  max-height: 130px;
+  max-width: min(48vw, 220px);
+  max-height: min(40vh, 220px);
 }
 
 .gardenproj-container .gardenproject-title,

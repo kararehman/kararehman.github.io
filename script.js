@@ -37,6 +37,12 @@ document.addEventListener('DOMContentLoaded', function () {
   var captionTitle = captionBox.querySelector('.caption-title');
   var captionDesc = captionBox.querySelector('.caption-description');
   var activeContainer = null;
+  var topZ = 20;
+
+  function bringToFront(container) {
+  topZ++;
+  container.style.zIndex = topZ;
+}
 
   function isDesktop() {
     return window.innerWidth > 768;
@@ -134,30 +140,32 @@ window.addEventListener('resize', function () {
   });
 
   containers.forEach(function (container) {
-    var title = container.querySelector('.gardenproject-title').innerText;
-    var desc = container.querySelector('.gardenproject-description').innerText;
+  var title = container.querySelector('.gardenproject-title').innerText;
+  var desc = container.querySelector('.gardenproject-description').innerText;
 
-    // desktop: hover
-    container.addEventListener('mouseenter', function () {
-      if (!isDesktop()) return;
-      showCaption(title, desc);
-    });
-    container.addEventListener('mouseleave', function () {
-      if (!isDesktop()) return;
+  // desktop: hover
+  container.addEventListener('mouseenter', function () {
+    if (!isDesktop()) return;
+    bringToFront(container);
+    showCaption(title, desc);
+  });
+  container.addEventListener('mouseleave', function () {
+    if (!isDesktop()) return;
+    hideCaption();
+  });
+
+  // mobile: tap to toggle
+  container.addEventListener('click', function (e) {
+    if (isDesktop()) return;
+    e.stopPropagation();
+    bringToFront(container);
+    if (activeContainer === container && captionBox.classList.contains('visible')) {
       hideCaption();
-    });
-
-    // mobile: tap to toggle
-    container.addEventListener('click', function (e) {
-      if (isDesktop()) return;
-      e.stopPropagation();
-      if (activeContainer === container && captionBox.classList.contains('visible')) {
-        hideCaption();
-      } else {
-        showCaption(title, desc);
-        activeContainer = container;
-      }
-    });
+    } else {
+      showCaption(title, desc);
+      activeContainer = container;
+    }
+  });
   });
 
   // tapping anywhere else on mobile closes the open caption
